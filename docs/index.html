@@ -13,30 +13,34 @@
     <div class="container">
       <a class="brand" href="index.html">
         <img class="brand-logo" src="assets/icons/icon48.png" alt="logo">
-        <span>ChatGPT 广告屏蔽</span>
+        <span data-i18n="appName">ChatGPT 广告屏蔽</span>
       </a>
       <nav class="nav">
-        <a href="#features">功能</a>
-        <a href="#install">安装</a>
-        <a href="privacy.html">隐私政策</a>
+        <a href="#features" data-i18n="navFeatures">功能</a>
+        <a href="#install" data-i18n="navInstall">安装</a>
+        <a href="privacy.html" data-i18n="navPrivacy">隐私政策</a>
         <a href="https://github.com/xiaowulang-turbo/chatgpt-ad-blocker" target="_blank" rel="noopener">GitHub</a>
+        <div class="lang-switch" aria-label="语言切换">
+          <button type="button" data-lang-to="zh" class="active">中文</button>
+          <button type="button" data-lang-to="en">EN</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero container">
-    <img class="hero-icon" src="assets/icons/icon128.png" alt="ChatGPT 广告屏蔽">
-    <h1 class="hero-title">ChatGPT 广告屏蔽</h1>
-    <p class="hero-sub">自动屏蔽对话流内嵌的广告卡片。彻底无痕、零误伤，改版后规则远程热更，一次安装长期生效。</p>
+    <img class="hero-icon" src="assets/icons/icon128.png" alt="ChatGPT Ad Blocker icon">
+    <h1 class="hero-title" data-i18n="appName">ChatGPT 广告屏蔽</h1>
+    <p class="hero-sub" data-i18n="heroSub">自动屏蔽对话流内嵌的广告卡片。彻底无痕、零误伤，改版后规则远程热更，一次安装长期生效。</p>
     <div class="cta-group">
       <a class="btn btn-primary" href="#install">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-        立即安装
+        <span data-i18n="ctaInstall">立即安装</span>
       </a>
       <a class="btn btn-ghost" href="https://github.com/xiaowulang-turbo/chatgpt-ad-blocker" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-        查看源码
+        <span data-i18n="ctaSource">查看源码</span>
       </a>
     </div>
   </section>
@@ -45,51 +49,51 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">为什么选择它</h2>
-        <p class="section-sub">专为 ChatGPT 对话场景打造的轻量拦截方案</p>
+        <h2 class="section-title" data-i18n="secWhyTitle">为什么选择它</h2>
+        <p class="section-sub" data-i18n="secWhySub">专为 ChatGPT 对话场景打造的轻量拦截方案</p>
       </div>
       <div class="grid grid-3">
         <div class="card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
           </div>
-          <div class="card-title">精确屏蔽</div>
-          <div class="card-desc">按徽标文本 + 卡片容器复合识别，不误伤代码块、图片、搜索结果，或正文含"广告"二字的普通句子。</div>
+          <div class="card-title" data-i18n="f1t">精确屏蔽</div>
+          <div class="card-desc" data-i18n="f1d">按徽标文本 + 卡片容器复合识别，不误伤代码块、图片、搜索结果，或正文含"广告"二字的普通句子。</div>
         </div>
         <div class="card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9l.8 1.2a2 2 0 0 0 1.7.9H20a2 2 0 0 1 2 2v4"/><path d="m13.2 16-2.2 2.2-2.2-2.2"/><path d="M11 18.2V13"/></svg>
           </div>
-          <div class="card-title">彻底无痕</div>
-          <div class="card-desc">连广告上方的分隔线一并隐藏，视觉上"广告从未存在"，也可切换为安全模式保留分隔线。</div>
+          <div class="card-title" data-i18n="f2t">彻底无痕</div>
+          <div class="card-desc" data-i18n="f2d">连广告上方的分隔线一并隐藏，视觉上"广告从未存在"，也可切换为安全模式保留分隔线。</div>
         </div>
         <div class="card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <div class="card-title">持续生效</div>
-          <div class="card-desc">监听 SPA 动态插入，新回复中的广告自动清除，无需刷新页面。</div>
+          <div class="card-title" data-i18n="f3t">持续生效</div>
+          <div class="card-desc" data-i18n="f3d">监听 SPA 动态插入，新回复中的广告自动清除，无需刷新页面。</div>
         </div>
         <div class="card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
           </div>
-          <div class="card-title">规则热更</div>
-          <div class="card-desc">ChatGPT 改版后，规则纯数据远程更新，无需重新下载安装，自动恢复拦截。</div>
+          <div class="card-title" data-i18n="f4t">规则热更</div>
+          <div class="card-desc" data-i18n="f4d">ChatGPT 改版后，规则纯数据远程更新，无需重新下载安装，自动恢复拦截。</div>
         </div>
         <div class="card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div class="card-title">零追踪</div>
-          <div class="card-desc">不收集、不上传任何个人信息，所有设置与匿名计数仅存于您的浏览器。</div>
+          <div class="card-title" data-i18n="f5t">零追踪</div>
+          <div class="card-desc" data-i18n="f5d">不收集、不上传任何个人信息，所有设置与匿名计数仅存于您的浏览器。</div>
         </div>
         <div class="card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <div class="card-title">中英双语</div>
-          <div class="card-desc">界面跟随浏览器语言自动切换中文 / 英文，海外用户开箱即用。</div>
+          <div class="card-title" data-i18n="f6t">中英双语</div>
+          <div class="card-desc" data-i18n="f6d">界面跟随浏览器语言自动切换中文 / 英文，海外用户开箱即用。</div>
         </div>
       </div>
     </div>
@@ -99,13 +103,13 @@
   <section class="section" id="screenshot">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">使用效果</h2>
-        <p class="section-sub">一个开关，屏蔽所有内嵌广告卡片</p>
+        <h2 class="section-title" data-i18n="secShotTitle">使用效果</h2>
+        <p class="section-sub" data-i18n="secShotSub">一个开关，屏蔽所有内嵌广告卡片</p>
       </div>
       <div class="shot-wrap">
-        <img src="assets/store/screenshots/screenshot-compare.png" alt="ChatGPT 广告屏蔽前后对比">
+        <img src="assets/store/screenshots/screenshot-compare.png" data-i18n-alt="shotAlt" alt="ChatGPT 广告屏蔽前后对比">
       </div>
-      <p class="shot-caption">左侧为屏蔽前，右侧为开启「彻底无痕」后的效果</p>
+      <p class="shot-caption" data-i18n="shotCaption">左侧为屏蔽前，右侧为开启「彻底无痕」后的效果</p>
     </div>
   </section>
 
@@ -113,29 +117,29 @@
   <section class="section" id="install">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title">三步安装</h2>
-        <p class="section-sub">开发者模式加载，约 30 秒完成</p>
+        <h2 class="section-title" data-i18n="secInstTitle">三步安装</h2>
+        <p class="section-sub" data-i18n="secInstSub">开发者模式加载，约 30 秒完成</p>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step-num"></div>
           <div class="step-body">
-            <b>打开扩展管理页</b>
-            <span>在 Chrome 地址栏输入 <code>chrome://extensions</code>，右上角开启「开发者模式」</span>
+            <b data-i18n="s1t">打开扩展管理页</b>
+            <span data-i18n-html="s1d">在 Chrome 地址栏输入 <code>chrome://extensions</code>，右上角开启「开发者模式」</span>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-body">
-            <b>加载已解压的扩展程序</b>
-            <span>点击「加载已解压的扩展程序」，选择本仓库目录 <code>chatgpt-ad-blocker/</code></span>
+            <b data-i18n="s2t">加载已解压的扩展程序</b>
+            <span data-i18n-html="s2d">点击「加载已解压的扩展程序」，选择本仓库目录 <code>chatgpt-ad-blocker/</code></span>
           </div>
         </div>
         <div class="step">
           <div class="step-num"></div>
           <div class="step-body">
-            <b>开始使用</b>
-            <span>打开或刷新 <code>chatgpt.com</code> 会话页，广告卡片即被自动屏蔽</span>
+            <b data-i18n="s3t">开始使用</b>
+            <span data-i18n-html="s3d">打开或刷新 <code>chatgpt.com</code> 会话页，广告卡片即被自动屏蔽</span>
           </div>
         </div>
       </div>
@@ -144,12 +148,14 @@
 
   <footer class="site-footer">
     <div class="container">
-      <span>© 2026 ChatGPT 广告屏蔽 · 开源免费</span>
+      <span data-i18n="footerCopyright">© 2026 ChatGPT 广告屏蔽 · 开源免费</span>
       <div class="footer-links">
-        <a href="privacy.html">隐私政策</a>
+        <a href="privacy.html" data-i18n="navPrivacy">隐私政策</a>
         <a href="https://github.com/xiaowulang-turbo/chatgpt-ad-blocker" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </footer>
+
+  <script src="assets/i18n.js"></script>
 </body>
 </html>

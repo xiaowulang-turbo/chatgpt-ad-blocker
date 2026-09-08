@@ -1,0 +1,9 @@
+/* 命中广告节点标记隐藏：保留 DOM 结构，不影响 React reconcile，可逆（移除标记即恢复） */
+[data-cb-adhidden="1"] {
+  display: none !important;
+}
+
+/* 彻底无痕：连带隐藏广告块的上分隔线（由 JS 在 clean 模式下给分隔线打此标记） */
+[data-cb-adhidden-sep="1"] {
+  display: none !important;
+}

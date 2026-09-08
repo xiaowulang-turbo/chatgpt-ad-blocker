@@ -1,0 +1,66 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #1f2328;
+  background: #fff;
+  padding: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.logo { font-size: 20px; }
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* 开关 */
+.switch { position: relative; display: inline-block; width: 40px; height: 22px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: #c9ccd1; border-radius: 22px; transition: 0.2s;
+}
+.slider::before {
+  content: ""; position: absolute; height: 16px; width: 16px;
+  left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: 0.2s;
+}
+.switch input:checked + .slider { background: #1a7f37; }
+.switch input:checked + .slider::before { transform: translateX(18px); }
+
+.section { margin-bottom: 14px; }
+.section:last-child { margin-bottom: 0; }
+
+.label { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+
+.modes { display: flex; flex-direction: column; gap: 6px; }
+.mode {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; cursor: pointer;
+}
+.mode input { accent-color: #1a7f37; }
+
+.stats {
+  display: flex; gap: 8px;
+  padding: 12px; background: #f6f8fa; border-radius: 10px;
+}
+.stat { flex: 1; text-align: center; }
+.num { font-size: 20px; font-weight: 700; color: #1a7f37; }
+.cap { font-size: 11px; color: #6b7280; margin-top: 2px; }
+
+.btn {
+  width: 100%; padding: 8px 0;
+  font-size: 13px; color: #1f2328;
+  background: #fff; border: 1px solid #d0d7de; border-radius: 8px;
+  cursor: pointer; transition: 0.15s;
+}
+.btn:hover { background: #f3f4f6; }

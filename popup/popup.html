@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT 广告屏蔽</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <span class="logo">🛡</span>
+    <span class="title">ChatGPT 广告屏蔽</span>
+    <label class="switch" title="开启/关闭屏蔽">
+      <input type="checkbox" id="enabled" checked>
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="section">
+    <div class="label">屏蔽模式</div>
+    <div class="modes">
+      <label class="mode">
+        <input type="radio" name="mode" value="clean" checked>
+        <span>彻底无痕</span>
+      </label>
+      <label class="mode">
+        <input type="radio" name="mode" value="safe">
+        <span>安全（保留分隔线）</span>
+      </label>
+    </div>
+  </section>
+
+  <section class="section stats">
+    <div class="stat">
+      <div class="num" id="total">0</div>
+      <div class="cap">累计屏蔽</div>
+    </div>
+    <div class="stat">
+      <div class="num" id="month">0</div>
+      <div class="cap">本月</div>
+    </div>
+    <div class="stat">
+      <div class="num" id="page">0</div>
+      <div class="cap">本页</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <button id="restore" class="btn">还原本页全部</button>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

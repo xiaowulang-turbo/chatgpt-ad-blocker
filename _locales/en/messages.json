@@ -1,0 +1,46 @@
+{
+  "extName": {
+    "message": "ChatGPT Ad Blocker",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "Automatically blocks embedded ad cards in ChatGPT conversations. Seamless, zero false positives, remotely hot-updatable rules.",
+    "description": "Extension description"
+  },
+  "popupTitle": {
+    "message": "ChatGPT Ad Blocker",
+    "description": "Popup title"
+  },
+  "toggleHint": {
+    "message": "Enable/disable blocking",
+    "description": "Toggle switch hint"
+  },
+  "modeLabel": {
+    "message": "Blocking mode",
+    "description": "Mode section label"
+  },
+  "modeClean": {
+    "message": "Seamless",
+    "description": "Mode: seamless"
+  },
+  "modeSafe": {
+    "message": "Safe (keep divider)",
+    "description": "Mode: safe"
+  },
+  "statTotal": {
+    "message": "Total blocked",
+    "description": "Stat: total blocked"
+  },
+  "statMonth": {
+    "message": "This month",
+    "description": "Stat: this month"
+  },
+  "statPage": {
+    "message": "This page",
+    "description": "Stat: this page"
+  },
+  "restoreBtn": {
+    "message": "Restore all on page",
+    "description": "Restore button"
+  }
+}

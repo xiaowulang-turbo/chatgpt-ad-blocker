@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "ChatGPT 广告屏蔽",
+  "name": "__MSG_extName__",
   "version": "1.0.0",
-  "description": "自动屏蔽 ChatGPT 对话流内嵌的广告卡片，彻底无痕、零误伤，改版可远程热更规则。",
+  "default_locale": "zh_CN",
+  "description": "__MSG_extDesc__",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",

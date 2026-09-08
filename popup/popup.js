@@ -1,6 +1,22 @@
 'use strict';
 
+// 国际化：按 chrome.i18n 填充 data-i18n / data-i18n-title 文案
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var msg = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+    if (msg) el.textContent = msg;
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+    var msg = chrome.i18n.getMessage(el.getAttribute('data-i18n-title'));
+    if (msg) el.setAttribute('title', msg);
+  });
+  var t = chrome.i18n.getMessage('popupTitle');
+  if (t) document.title = t;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+  applyI18n();
+
   var enabledEl = document.getElementById('enabled');
   var modeEls = document.querySelectorAll('input[name="mode"]');
   var totalEl = document.getElementById('total');

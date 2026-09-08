@@ -22,14 +22,22 @@
 ```
 chatgpt-ad-blocker/
 ├── manifest.json              # MV3 清单
+├── _locales/                  # 国际化文案（zh_CN 默认 / en）
 ├── icons/                     # 图标
 ├── content/
 │   ├── rules.js               # 内置默认规则（纯数据）
 │   ├── content.js             # 识别引擎 + 观察器 + 打标
 │   └── content.css            # 隐藏规则
 ├── popup/                     # 设置面板
-└── background/
-    └── service-worker.js      # 规则热更 + 累计统计 + badge
+├── background/
+│   └── service-worker.js      # 规则热更 + 累计统计 + badge
+├── docs/                      # 官网 + 隐私政策（GitHub Pages 源）
+│   ├── index.html             # 官网首页
+│   ├── privacy.html           # 隐私政策（中英双语）
+│   └── assets/
+│       ├── style.css
+│       └── store/             # 商店素材（screenshots + promo tiles）
+└── rules.json                 # 远程热更规则
 ```
 
 ## 规则热更配置
@@ -52,3 +60,14 @@ chatgpt-ad-blocker/
 
 - 仅桌面 `chatgpt.com` 起步，如需覆盖 `chat.com` 等域名，在 `manifest.json` 的 `matches` 加一行即可
 - 方案设计文档见 `.temp/chatgpt-adblock-chrome-extension-design.md`
+
+## 官网与隐私政策
+
+官网与隐私政策源文件在 `docs/` 目录，已部署到 **Vercel**（生产地址）：
+
+- 首页：<https://chatgpt-ad-blocker.vercel.app/>
+- 隐私政策：<https://chatgpt-ad-blocker.vercel.app/privacy.html>
+
+Vercel 项目配置：**Root Directory = `docs`**、Framework = Other（纯静态），已连接 GitHub 仓库，`main` 分支 push 后自动部署。
+
+> 也可同时启用 GitHub Pages 作为备用：仓库 Settings → Pages → Source 选 `Deploy from a branch` → Branch `main` / Folder `/docs`。

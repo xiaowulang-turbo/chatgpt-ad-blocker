@@ -8,45 +8,59 @@
 </head>
 <body>
   <header class="header">
-    <span class="logo">🛡</span>
-    <span class="title">ChatGPT 广告屏蔽</span>
-    <label class="switch" title="开启/关闭屏蔽">
+    <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+    </svg>
+    <span class="title" data-i18n="popupTitle">ChatGPT 广告屏蔽</span>
+    <label class="switch" data-i18n-title="toggleHint">
       <input type="checkbox" id="enabled" checked>
       <span class="slider"></span>
     </label>
   </header>
 
   <section class="section">
-    <div class="label">屏蔽模式</div>
+    <div class="label" data-i18n="modeLabel">屏蔽模式</div>
     <div class="modes">
       <label class="mode">
         <input type="radio" name="mode" value="clean" checked>
-        <span>彻底无痕</span>
+        <span class="mode-dot"></span>
+        <span data-i18n="modeClean">彻底无痕</span>
       </label>
       <label class="mode">
         <input type="radio" name="mode" value="safe">
-        <span>安全（保留分隔线）</span>
+        <span class="mode-dot"></span>
+        <span data-i18n="modeSafe">安全（保留分隔线）</span>
       </label>
-    </div>
-  </section>
-
-  <section class="section stats">
-    <div class="stat">
-      <div class="num" id="total">0</div>
-      <div class="cap">累计屏蔽</div>
-    </div>
-    <div class="stat">
-      <div class="num" id="month">0</div>
-      <div class="cap">本月</div>
-    </div>
-    <div class="stat">
-      <div class="num" id="page">0</div>
-      <div class="cap">本页</div>
     </div>
   </section>
 
   <section class="section">
-    <button id="restore" class="btn">还原本页全部</button>
+    <div class="stats">
+      <div class="stat">
+        <div class="num" id="total">0</div>
+        <div class="cap" data-i18n="statTotal">累计屏蔽</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="month">0</div>
+        <div class="cap" data-i18n="statMonth">本月</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="page">0</div>
+        <div class="cap" data-i18n="statPage">本页</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <button id="restore" class="btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+        <path d="M3 3v5h5"/>
+      </svg>
+      <span data-i18n="restoreBtn">还原本页全部</span>
+    </button>
   </section>
 
   <script src="popup.js"></script>

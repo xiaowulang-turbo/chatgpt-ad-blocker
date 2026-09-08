@@ -1,0 +1,46 @@
+{
+  "extName": {
+    "message": "ChatGPT 广告屏蔽",
+    "description": "扩展名称"
+  },
+  "extDesc": {
+    "message": "自动屏蔽 ChatGPT 对话流内嵌的广告卡片，彻底无痕、零误伤，规则可远程热更。",
+    "description": "扩展描述"
+  },
+  "popupTitle": {
+    "message": "ChatGPT 广告屏蔽",
+    "description": "弹窗标题"
+  },
+  "toggleHint": {
+    "message": "开启/关闭屏蔽",
+    "description": "总开关悬停提示"
+  },
+  "modeLabel": {
+    "message": "屏蔽模式",
+    "description": "屏蔽模式分组标题"
+  },
+  "modeClean": {
+    "message": "彻底无痕",
+    "description": "模式：彻底无痕"
+  },
+  "modeSafe": {
+    "message": "安全（保留分隔线）",
+    "description": "模式：安全"
+  },
+  "statTotal": {
+    "message": "累计屏蔽",
+    "description": "统计：累计屏蔽"
+  },
+  "statMonth": {
+    "message": "本月",
+    "description": "统计：本月"
+  },
+  "statPage": {
+    "message": "本页",
+    "description": "统计：本页"
+  },
+  "restoreBtn": {
+    "message": "还原本页全部",
+    "description": "还原按钮"
+  }
+}

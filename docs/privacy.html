@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私政策 · ChatGPT 广告屏蔽</title>
+  <link rel="icon" type="image/png" href="assets/icons/icon48.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/icons/icon48.png" alt="logo">
+        <span>ChatGPT 广告屏蔽</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <div class="lang-switch" role="tablist" aria-label="语言切换">
+          <button id="lang-zh" class="active" data-set-lang="zh">中文</button>
+          <button id="lang-en" data-set-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc">
+    <!-- 中文 -->
+    <div class="lang-block" data-lang="zh">
+      <h1>隐私政策</h1>
+      <p class="meta">最后更新：2026 年 9 月 8 日</p>
+
+      <p>本隐私政策说明「ChatGPT 广告屏蔽」浏览器扩展（以下简称“本扩展”）如何处理您的数据。我们高度重视您的隐私，并遵循最小化原则：<strong>本扩展不收集、不存储、不上传任何个人身份信息</strong>。</p>
+
+      <h2>1. 我们收集什么</h2>
+      <ul>
+        <li><strong>我们不收集任何个人信息</strong>：不收集您的姓名、邮箱、账号、浏览历史、聊天内容、IP 地址或任何可识别个人身份的信息。</li>
+        <li><strong>仅本地统计</strong>：为展示「累计屏蔽 / 本月 / 本页」计数，扩展在您浏览器本地记录一个匿名数字（屏蔽广告卡片的次数）。该数字不包含任何个人信息。</li>
+      </ul>
+
+      <h2>2. 数据存储在哪里</h2>
+      <ul>
+        <li><strong>设置与模式</strong>（开关状态、屏蔽模式）：存储在您浏览器本地的 <code>chrome.storage.local</code>。</li>
+        <li><strong>屏蔽计数</strong>：存储在 <code>chrome.storage.sync</code>，仅用于在您登录同一浏览器账号的多台设备间同步匿名计数。</li>
+        <li><strong>所有数据仅存在于您的浏览器</strong>，不会发送到我们的任何服务器。</li>
+      </ul>
+
+      <h2>3. 远程规则更新</h2>
+      <p>为使屏蔽规则在 ChatGPT 改版后仍能生效，本扩展会定期从公开仓库 <code>https://raw.githubusercontent.com/xiaowulang-turbo/chatgpt-ad-blocker/main/rules.json</code> 拉取<strong>纯数据规则文件</strong>（不含任何可执行代码，也不含任何个人数据）。该请求不携带任何用户信息。</p>
+
+      <h2>4. 权限说明</h2>
+      <ul>
+        <li><code>storage</code>：用于保存上述设置与匿名计数。</li>
+        <li><code>host_permissions</code>（raw.githubusercontent.com）：仅用于拉取远程规则文件。</li>
+        <li><code>content_scripts</code>（chatgpt.com）：仅在 ChatGPT 页面运行，用于识别并隐藏广告卡片。</li>
+      </ul>
+
+      <h2>5. 数据共享</h2>
+      <p>本扩展<strong>不与任何第三方共享数据</strong>，不用于广告、营销或分析。</p>
+
+      <h2>6. 您的选择</h2>
+      <ul>
+        <li>您可以随时在扩展弹窗中关闭屏蔽开关；</li>
+        <li>卸载扩展即会清除本地所有数据；</li>
+        <li>清除浏览器数据时，扩展设置与计数一并被清除。</li>
+      </ul>
+
+      <h2>7. 联系我们</h2>
+      <p>如对本隐私政策有任何疑问，请通过 GitHub 仓库提交 Issue：<a href="https://github.com/xiaowulang-turbo/chatgpt-ad-blocker" target="_blank" rel="noopener">github.com/xiaowulang-turbo/chatgpt-ad-blocker</a>。</p>
+    </div>
+
+    <!-- English -->
+    <div class="lang-block" data-lang="en" hidden>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: September 8, 2026</p>
+
+      <p>This Privacy Policy explains how the "ChatGPT Ad Blocker" browser extension ("the Extension") handles your data. We value your privacy and follow the principle of data minimization: <strong>the Extension does not collect, store, or transmit any personally identifiable information</strong>.</p>
+
+      <h2>1. What We Collect</h2>
+      <ul>
+        <li><strong>We collect no personal information</strong>: no name, email, account, browsing history, chat content, IP address, or any personally identifiable data.</li>
+        <li><strong>Local-only statistics</strong>: to display "Total blocked / This month / This page" counters, the Extension records an anonymous number locally (the count of blocked ad cards). This number contains no personal information.</li>
+      </ul>
+
+      <h2>2. Where Data Is Stored</h2>
+      <ul>
+        <li><strong>Settings &amp; mode</strong> (toggle state, blocking mode): stored in your browser's local <code>chrome.storage.local</code>.</li>
+        <li><strong>Blocking counters</strong>: stored in <code>chrome.storage.sync</code>, used only to sync anonymous counts across devices signed in to the same browser account.</li>
+        <li><strong>All data stays in your browser</strong> and is never sent to any of our servers.</li>
+      </ul>
+
+      <h2>3. Remote Rule Updates</h2>
+      <p>To keep blocking effective after ChatGPT changes its layout, the Extension periodically fetches a <strong>pure-data rules file</strong> from the public repository <code>https://raw.githubusercontent.com/xiaowulang-turbo/chatgpt-ad-blocker/main/rules.json</code> (no executable code, no personal data). This request carries no user information.</p>
+
+      <h2>4. Permissions</h2>
+      <ul>
+        <li><code>storage</code>: used to save the settings and anonymous counters above.</li>
+        <li><code>host_permissions</code> (raw.githubusercontent.com): used only to fetch the remote rules file.</li>
+        <li><code>content_scripts</code> (chatgpt.com): runs only on ChatGPT pages to identify and hide ad cards.</li>
+      </ul>
+
+      <h2>5. Data Sharing</h2>
+      <p>The Extension <strong>does not share data with any third party</strong>, and does not use it for advertising, marketing, or analytics.</p>
+
+      <h2>6. Your Choices</h2>
+      <ul>
+        <li>You can turn off blocking at any time from the Extension popup;</li>
+        <li>Uninstalling the Extension removes all local data;</li>
+        <li>Clearing your browser data also clears the Extension's settings and counters.</li>
+      </ul>
+
+      <h2>7. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please open an issue in the GitHub repository: <a href="https://github.com/xiaowulang-turbo/chatgpt-ad-blocker" target="_blank" rel="noopener">github.com/xiaowulang-turbo/chatgpt-ad-blocker</a>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 ChatGPT 广告屏蔽</span>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="https://github.com/xiaowulang-turbo/chatgpt-ad-blocker" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('[data-set-lang]');
+      var blocks = document.querySelectorAll('.lang-block');
+      function setLang(lang) {
+        blocks.forEach(function (b) { b.hidden = b.getAttribute('data-lang') !== lang; });
+        buttons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-set-lang') === lang); });
+      }
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
+      });
+    })();
+  </script>
+</body>
+</html>

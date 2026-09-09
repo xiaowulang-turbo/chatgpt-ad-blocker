@@ -67,8 +67,14 @@
       zh: '左侧为屏蔽前，右侧为开启「彻底无痕」后的效果',
       en: 'Left: before. Right: after enabling Seamless mode.'
     },
-    secInstTitle: { zh: '三步安装', en: 'Install in 3 steps' },
-    secInstSub: { zh: '开发者模式加载，约 30 秒完成', en: 'Developer-mode loading, about 30 seconds' },
+    secInstTitle: { zh: '安装', en: 'Install' },
+    secInstSub: { zh: '已上架 Chrome 应用商店，一键安装即可', en: 'Now on the Chrome Web Store — one click to install' },
+    storeInstall: { zh: '从 Chrome 应用商店安装', en: 'Install from Chrome Web Store' },
+    installHint: {
+      zh: '在 Chrome 中打开商店页，点击右上角「添加至 Chrome」即可。安装后自动更新、跨设备同步。',
+      en: 'Open the store page in Chrome and click "Add to Chrome". Auto-updates and syncs across your devices.'
+    },
+    devSummary: { zh: '开发者模式加载（可选，无需商店）', en: 'Developer mode install (optional, no store needed)' },
     s1t: { zh: '打开扩展管理页', en: 'Open the extensions page' },
     s1d: {
       zh: '在 Chrome 地址栏输入 <code>chrome://extensions</code>，右上角开启「开发者模式」',
@@ -76,8 +82,8 @@
     },
     s2t: { zh: '加载已解压的扩展程序', en: 'Load unpacked extension' },
     s2d: {
-      zh: '点击「加载已解压的扩展程序」，选择本仓库目录 <code>chatgpt-ad-blocker/</code>',
-      en: 'Click "Load unpacked" and select this repo folder <code>chatgpt-ad-blocker/</code>.'
+      zh: '点击「加载已解压的扩展程序」，选择源码目录 <code>chatgpt-ad-blocker/</code>',
+      en: 'Click "Load unpacked" and select the source folder <code>chatgpt-ad-blocker/</code>.'
     },
     s3t: { zh: '开始使用', en: 'Start using' },
     s3d: {

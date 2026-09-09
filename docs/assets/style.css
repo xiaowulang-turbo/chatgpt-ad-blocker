@@ -115,6 +115,30 @@ a:hover { text-decoration: underline; }
 .btn-ghost { background: #fff; color: var(--text); border: 1px solid var(--border); }
 .btn-ghost:hover { background: var(--bg-soft); text-decoration: none; }
 .btn svg { width: 18px; height: 18px; }
+.btn-lg { padding: 14px 30px; font-size: 16px; }
+
+/* ---------- Install ---------- */
+.install-main { text-align: center; padding: 8px 0 4px; }
+.install-hint { color: var(--text-soft); font-size: 14px; margin-top: 14px; }
+.install-hint code { background: var(--bg-soft); padding: 1px 6px; border-radius: 4px; font-size: 13px; color: var(--primary-dark); }
+.dev-install {
+  margin-top: 28px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 0 20px;
+}
+.dev-install summary {
+  cursor: pointer;
+  padding: 14px 0;
+  font-size: 14px;
+  color: var(--text-soft);
+  list-style: none;
+  user-select: none;
+}
+.dev-install summary::-webkit-details-marker { display: none; }
+.dev-install summary::before { content: "▸ "; color: var(--primary); }
+.dev-install[open] summary::before { content: "▾ "; }
+.dev-install .steps { padding-bottom: 6px; }
 
 /* ---------- Features ---------- */
 .section { padding: 48px 0; }

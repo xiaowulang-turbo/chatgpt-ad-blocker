@@ -34,7 +34,7 @@
     <h1 class="hero-title" data-i18n="appName">ChatGPT 广告屏蔽</h1>
     <p class="hero-sub" data-i18n="heroSub">自动屏蔽对话流内嵌的广告卡片。彻底无痕、零误伤，改版后规则远程热更，一次安装长期生效。</p>
     <div class="cta-group">
-      <a class="btn btn-primary" href="#install">
+      <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/chatgpt-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD/dgnnfbpfahpiaiplaglngbojnnjohhom" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         <span data-i18n="ctaInstall">立即安装</span>
       </a>
@@ -117,32 +117,42 @@
   <section class="section" id="install">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title" data-i18n="secInstTitle">三步安装</h2>
-        <p class="section-sub" data-i18n="secInstSub">开发者模式加载，约 30 秒完成</p>
+        <h2 class="section-title" data-i18n="secInstTitle">安装</h2>
+        <p class="section-sub" data-i18n="secInstSub">已上架 Chrome 应用商店，一键安装即可</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num"></div>
-          <div class="step-body">
-            <b data-i18n="s1t">打开扩展管理页</b>
-            <span data-i18n-html="s1d">在 Chrome 地址栏输入 <code>chrome://extensions</code>，右上角开启「开发者模式」</span>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num"></div>
-          <div class="step-body">
-            <b data-i18n="s2t">加载已解压的扩展程序</b>
-            <span data-i18n-html="s2d">点击「加载已解压的扩展程序」，选择本仓库目录 <code>chatgpt-ad-blocker/</code></span>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num"></div>
-          <div class="step-body">
-            <b data-i18n="s3t">开始使用</b>
-            <span data-i18n-html="s3d">打开或刷新 <code>chatgpt.com</code> 会话页，广告卡片即被自动屏蔽</span>
-          </div>
-        </div>
+      <div class="install-main">
+        <a class="btn btn-primary btn-lg" href="https://chromewebstore.google.com/detail/chatgpt-%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD/dgnnfbpfahpiaiplaglngbojnnjohhom" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span data-i18n="storeInstall">从 Chrome 应用商店安装</span>
+        </a>
+        <p class="install-hint" data-i18n-html="installHint">在 Chrome 中打开商店页，点击右上角「添加至 Chrome」即可。自动更新、自动同步。</p>
       </div>
+      <details class="dev-install">
+        <summary data-i18n="devSummary">开发者模式加载（可选，无需商店）</summary>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num"></div>
+            <div class="step-body">
+              <b data-i18n="s1t">打开扩展管理页</b>
+              <span data-i18n-html="s1d">在 Chrome 地址栏输入 <code>chrome://extensions</code>，右上角开启「开发者模式」</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num"></div>
+            <div class="step-body">
+              <b data-i18n="s2t">加载已解压的扩展程序</b>
+              <span data-i18n-html="s2d">点击「加载已解压的扩展程序」，选择源码目录 <code>chatgpt-ad-blocker/</code></span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num"></div>
+            <div class="step-body">
+              <b data-i18n="s3t">开始使用</b>
+              <span data-i18n-html="s3d">打开或刷新 <code>chatgpt.com</code> 会话页，广告卡片即被自动屏蔽</span>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 

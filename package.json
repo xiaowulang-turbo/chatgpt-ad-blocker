@@ -1,0 +1,14 @@
+{
+  "name": "chatgpt-ad-blocker",
+  "private": true,
+  "description": "Chrome MV3 extension that blocks embedded ad cards in ChatGPT conversations",
+  "scripts": {
+    "lint": "eslint .",
+    "package": "node tools/pack.mjs",
+    "release": "node tools/release.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "eslint": "^10.0.0"
+  }
+}

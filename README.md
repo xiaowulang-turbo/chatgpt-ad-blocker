@@ -7,7 +7,7 @@
 - **精确屏蔽**：按「广告/Sponsored/Ad/Promoted」徽标文本 + 卡片容器复合识别，不误伤代码块、图片、搜索结果、正文含"广告"二字的普通句子
 - **彻底无痕**（默认）：连广告上方的分隔线一并隐藏，视觉上"广告从未存在"
 - **持续生效**：MutationObserver 监听 SPA 动态插入，新回复中的广告自动清除，无需刷新
-- **可开关/可还原/可统计**：Popup 一键开关、模式切换、累计屏蔽数、单页还原
+- **可开关/可统计**：Popup 一键开关、模式切换、累计屏蔽数、本页计数
 - **规则热更**：改版后更新远程规则 JSON 即可恢复拦截，无需重新上架
 
 ## 安装（开发者模式）
@@ -30,7 +30,7 @@ chatgpt-ad-blocker/
 │   └── content.css            # 隐藏规则
 ├── popup/                     # 设置面板
 ├── background/
-│   └── service-worker.js      # 规则热更 + 累计统计 + badge
+│   └── service-worker.js      # 规则热更 + 累计统计 + 角标（本页拦截数）
 ├── docs/                      # 官网 + 隐私政策（GitHub Pages 源）
 │   ├── index.html             # 官网首页
 │   ├── privacy.html           # 隐私政策（中英双语）
@@ -38,9 +38,24 @@ chatgpt-ad-blocker/
 │       ├── style.css
 │       └── store/             # 商店素材（screenshots + promo tiles，中英双语）
 ├── tools/
-│   └── promo-templates/       # 宣传图 HTML 模板（中英共用，?lang=zh|en）
+│   ├── promo-templates/       # 宣传图 HTML 模板（中英共用，?lang=zh|en）
+│   ├── pack.mjs               # 跨平台打包脚本（npm run package）
+│   └── release.mjs            # 发布 GitHub Release（npm run release）
+├── eslint.config.mjs          # ESLint 扁平配置
+├── package.json               # 开发脚本（lint / package）
 └── rules.json                 # 远程热更规则
 ```
+
+## 开发
+
+```bash
+npm install        # 安装 ESLint
+npm run lint       # 代码规范检查
+npm run package    # 打包为 chatgpt-ad-blocker-v<version>.zip（跨平台）
+npm run release    # 打包并发布为 GitHub Release（tag = v<version>，需先 gh auth login）
+```
+
+> `npm run release` 依赖 [GitHub CLI](https://cli.github.com/)：先执行 `gh auth login`。Release 基于远端分支 HEAD 创建，请先 `git push` 确保提交已同步。
 
 ## 规则热更配置
 
@@ -61,7 +76,7 @@ chatgpt-ad-blocker/
 ## 说明
 
 - 仅桌面 `chatgpt.com` 起步，如需覆盖 `chat.com` 等域名，在 `manifest.json` 的 `matches` 加一行即可
-- 方案设计文档见 `.temp/chatgpt-adblock-chrome-extension-design.md`
+- 内置默认规则（`content/rules.js`）与远程热更规则（`rules.json`）需保持一致：改其一须同步另一份并提升 `version`
 
 ## 官网与隐私政策
 

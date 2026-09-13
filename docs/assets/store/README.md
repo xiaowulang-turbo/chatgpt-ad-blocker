@@ -41,7 +41,7 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
   --screenshot=docs/assets/store/screenshots/popup.png \
   http://localhost:8766/popup/popup.html
 
-# 对话流对比（1280×800，中文场景模板见 .temp/store-mock/）
+# 对话流对比（1280×800）——场景模板为一次性产物，未纳入仓库
 "$CHROME" --headless --disable-gpu --hide-scrollbars \
   --window-size=1280,800 \
   --screenshot=docs/assets/store/screenshots/feature-chat-zh.png \

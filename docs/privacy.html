@@ -42,6 +42,7 @@
       <ul>
         <li><strong>设置与模式</strong>（开关状态、屏蔽模式）：存储在您浏览器本地的 <code>chrome.storage.local</code>。</li>
         <li><strong>屏蔽计数</strong>：存储在 <code>chrome.storage.sync</code>，仅用于在您登录同一浏览器账号的多台设备间同步匿名计数。</li>
+        <li><strong>本页计数</strong>（图标角标显示的当前页拦截数）：仅存于 <code>chrome.storage.session</code> 内存态，浏览器关闭即清除，不跨设备同步。</li>
         <li><strong>所有数据仅存在于您的浏览器</strong>，不会发送到我们的任何服务器。</li>
       </ul>
 
@@ -86,6 +87,7 @@
       <ul>
         <li><strong>Settings &amp; mode</strong> (toggle state, blocking mode): stored in your browser's local <code>chrome.storage.local</code>.</li>
         <li><strong>Blocking counters</strong>: stored in <code>chrome.storage.sync</code>, used only to sync anonymous counts across devices signed in to the same browser account.</li>
+        <li><strong>Per-page counter</strong> (the number shown on the toolbar badge): kept only in <code>chrome.storage.session</code> (in-memory), cleared when the browser closes, never synced.</li>
         <li><strong>All data stays in your browser</strong> and is never sent to any of our servers.</li>
       </ul>
 

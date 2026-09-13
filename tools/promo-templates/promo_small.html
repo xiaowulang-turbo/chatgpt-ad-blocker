@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>ChatGPT 广告屏蔽 · 宣传图（small）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1a7f37;
+    --green-bright: #1e8a3d;
+    --green-dark: #0f4d22;
+  }
+  html, body { width: 440px; height: 280px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: radial-gradient(150% 140% at 18% 40%, var(--green-bright) 0%, var(--green) 40%, var(--green-dark) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 26px 28px;
+    overflow: hidden;
+  }
+
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-logo {
+    width: 54px; height: 54px; border-radius: 14px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  }
+  .brand-logo svg { width: 31px; height: 31px; color: var(--green); }
+  .brand-name { font-size: 23px; font-weight: 800; letter-spacing: -0.2px; line-height: 1.1; }
+  .brand-sub { font-size: 13px; color: rgba(255, 255, 255, 0.72); margin-top: 4px; }
+
+  .headline { font-size: 36px; font-weight: 800; line-height: 1.24; letter-spacing: -0.6px; }
+
+  .tags { display: flex; gap: 10px; flex-wrap: wrap; }
+  .tag {
+    border: 1px solid rgba(255, 255, 255, 0.42); border-radius: 999px;
+    padding: 6px 14px; font-size: 13px; line-height: 1; color: rgba(255, 255, 255, 0.95);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="brand">
+    <div class="brand-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+    </div>
+    <div>
+      <div class="brand-name" data-i="name">ChatGPT 广告屏蔽</div>
+      <div class="brand-sub" data-i="sub">Chrome 扩展</div>
+    </div>
+  </div>
+
+  <div class="headline">
+    <div data-i="h1">彻底无痕</div>
+    <div data-i="h2">零误伤</div>
+  </div>
+
+  <div class="tags" data-i-list="tags">
+    <span class="tag" data-i-item>精确识别</span>
+    <span class="tag" data-i-item>规则热更</span>
+    <span class="tag" data-i-item>开源</span>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var I18N = {
+        zh: {
+          title: 'ChatGPT 广告屏蔽 · 宣传图',
+          name: 'ChatGPT 广告屏蔽', sub: 'Chrome 扩展',
+          h1: '彻底无痕', h2: '零误伤',
+          tags: ['精确识别', '规则热更', '开源']
+        },
+        en: {
+          title: 'ChatGPT Ad Blocker · Promo',
+          name: 'ChatGPT Ad Blocker', sub: 'Chrome Extension',
+          h1: 'Seamless', h2: 'Zero false positives',
+          tags: ['Precise', 'Hot-updatable rules', 'Open source']
+        }
+      };
+      var lang = 'zh';
+      try { if (new URLSearchParams(location.search).get('lang') === 'en') lang = 'en'; } catch (e) { /* ignore */ }
+      var t = I18N[lang];
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+      document.title = t.title;
+      document.querySelectorAll('[data-i]').forEach(function (el) {
+        var v = t[el.getAttribute('data-i')];
+        if (typeof v === 'string') el.textContent = v;
+      });
+      document.querySelectorAll('[data-i-list]').forEach(function (el) {
+        var arr = t[el.getAttribute('data-i-list')] || [];
+        el.querySelectorAll('[data-i-item]').forEach(function (item, i) {
+          if (arr[i] != null) item.textContent = arr[i];
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

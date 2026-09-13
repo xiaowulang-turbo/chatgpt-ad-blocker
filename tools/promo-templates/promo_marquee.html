@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>ChatGPT 广告屏蔽 · 宣传图（marquee）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green: #1a7f37;
+    --green-bright: #1e8a3d;
+    --green-dark: #0f4d22;
+    --ink: #1f2328;
+    --ink-soft: #6b7280;
+    --border: #d0d7de;
+    --bg-soft: #f6f8fa;
+  }
+  html, body { width: 1400px; height: 560px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: radial-gradient(140% 130% at 15% 45%, var(--green-bright) 0%, var(--green) 36%, var(--green-dark) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 0 88px;
+    overflow: hidden;
+  }
+
+  /* ---------- 左侧品牌区 ---------- */
+  .left { flex: 1; min-width: 0; }
+  .brand { display: flex; align-items: center; gap: 22px; }
+  .brand-logo {
+    width: 96px; height: 96px; border-radius: 24px; background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  }
+  .brand-logo svg { width: 54px; height: 54px; color: var(--green); }
+  .brand-name { font-size: 38px; font-weight: 800; letter-spacing: -0.3px; line-height: 1.1; }
+  .brand-sub { font-size: 17px; color: rgba(255, 255, 255, 0.72); margin-top: 7px; }
+
+  .headline { margin-top: 44px; font-size: 64px; font-weight: 800; line-height: 1.22; letter-spacing: -1px; }
+
+  .tags { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .tag {
+    border: 1px solid rgba(255, 255, 255, 0.42); border-radius: 999px;
+    padding: 10px 22px; font-size: 19px; line-height: 1; color: rgba(255, 255, 255, 0.95);
+    white-space: nowrap;
+  }
+
+  /* ---------- 右侧 popup 卡片 ---------- */
+  .card {
+    width: 392px; flex-shrink: 0; background: #fff; color: var(--ink);
+    border-radius: 16px; padding: 18px 18px 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  }
+  .c-head { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .c-head svg { width: 20px; height: 20px; color: var(--green); flex-shrink: 0; }
+  .c-head .c-name { font-size: 15px; font-weight: 700; flex: 1; min-width: 0; line-height: 1; }
+  .c-toggle {
+    width: 38px; height: 22px; border-radius: 22px; background: var(--green);
+    position: relative; flex-shrink: 0;
+  }
+  .c-toggle::before {
+    content: ""; position: absolute; width: 16px; height: 16px; left: 19px; top: 3px;
+    background: #fff; border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  .c-label { font-size: 12px; color: var(--ink-soft); margin-bottom: 8px; letter-spacing: 0.2px; }
+  .c-opt {
+    display: flex; align-items: center; gap: 8px; padding: 7px 8px;
+    font-size: 13px; border-radius: 6px;
+  }
+  .c-opt.active { background: var(--bg-soft); }
+  .c-radio {
+    width: 14px; height: 14px; border: 1.5px solid #c1c5cb; border-radius: 50%;
+    flex-shrink: 0; position: relative;
+  }
+  .c-opt.active .c-radio { border-color: var(--green); }
+  .c-opt.active .c-radio::after {
+    content: ""; position: absolute; inset: 2px; background: var(--green); border-radius: 50%;
+  }
+  .c-stats {
+    display: flex; gap: 4px; margin-top: 14px; padding: 14px 8px;
+    background: linear-gradient(180deg, #dafbe1 0%, #f0fdf4 100%); border-radius: 10px;
+  }
+  .c-stats div { flex: 1; text-align: center; }
+  .c-stats b {
+    display: block; font-size: 22px; font-weight: 700; color: var(--green);
+    line-height: 1.1; font-variant-numeric: tabular-nums;
+  }
+  .c-stats i { display: block; font-size: 11px; font-style: normal; color: var(--ink-soft); margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      </div>
+      <div>
+        <div class="brand-name" data-i="name">ChatGPT 广告屏蔽</div>
+        <div class="brand-sub" data-i="sub">Chrome 扩展 · MV3</div>
+      </div>
+    </div>
+
+    <div class="headline">
+      <div data-i="h1">对话流广告</div>
+      <div data-i="h2">一键彻底无痕</div>
+    </div>
+
+    <div class="tags" data-i-list="tags">
+      <span class="tag" data-i-item>精确识别</span>
+      <span class="tag" data-i-item>零误伤</span>
+      <span class="tag" data-i-item>规则热更</span>
+      <span class="tag" data-i-item>开源</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="c-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <span class="c-name" data-i="cardName">ChatGPT 广告屏蔽</span>
+      <span class="c-toggle"></span>
+    </div>
+    <div class="c-label" data-i="cardLabel">屏蔽模式</div>
+    <div class="c-opt active"><span class="c-radio"></span><span data-i="opt1">彻底无痕</span></div>
+    <div class="c-opt"><span class="c-radio"></span><span data-i="opt2">安全（保留分隔线）</span></div>
+    <div class="c-stats">
+      <div><b>3</b><i data-i="s1">累计屏蔽</i></div>
+      <div><b>3</b><i data-i="s2">本月</i></div>
+      <div><b>1</b><i data-i="s3">本页</i></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var I18N = {
+        zh: {
+          title: 'ChatGPT 广告屏蔽 · 宣传图',
+          name: 'ChatGPT 广告屏蔽', sub: 'Chrome 扩展 · MV3',
+          h1: '对话流广告', h2: '一键彻底无痕',
+          tags: ['精确识别', '零误伤', '规则热更', '开源'],
+          cardName: 'ChatGPT 广告屏蔽', cardLabel: '屏蔽模式',
+          opt1: '彻底无痕', opt2: '安全（保留分隔线）',
+          s1: '累计屏蔽', s2: '本月', s3: '本页'
+        },
+        en: {
+          title: 'ChatGPT Ad Blocker · Promo',
+          name: 'ChatGPT Ad Blocker', sub: 'Chrome Extension · MV3',
+          h1: 'In-chat ads', h2: 'Blocked seamlessly',
+          tags: ['Precise', 'Zero false positives', 'Hot-updatable rules', 'Open source'],
+          cardName: 'ChatGPT Ad Blocker', cardLabel: 'Blocking mode',
+          opt1: 'Seamless', opt2: 'Safe (keep divider)',
+          s1: 'Total blocked', s2: 'This month', s3: 'This page'
+        }
+      };
+      var lang = 'zh';
+      try { if (new URLSearchParams(location.search).get('lang') === 'en') lang = 'en'; } catch (e) { /* ignore */ }
+      var t = I18N[lang];
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+      document.title = t.title;
+      document.querySelectorAll('[data-i]').forEach(function (el) {
+        var v = t[el.getAttribute('data-i')];
+        if (typeof v === 'string') el.textContent = v;
+      });
+      document.querySelectorAll('[data-i-list]').forEach(function (el) {
+        var arr = t[el.getAttribute('data-i-list')] || [];
+        el.querySelectorAll('[data-i-item]').forEach(function (item, i) {
+          if (arr[i] != null) item.textContent = arr[i];
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

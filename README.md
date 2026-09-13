@@ -36,7 +36,9 @@ chatgpt-ad-blocker/
 │   ├── privacy.html           # 隐私政策（中英双语）
 │   └── assets/
 │       ├── style.css
-│       └── store/             # 商店素材（screenshots + promo tiles）
+│       └── store/             # 商店素材（screenshots + promo tiles，中英双语）
+├── tools/
+│   └── promo-templates/       # 宣传图 HTML 模板（中英共用，?lang=zh|en）
 └── rules.json                 # 远程热更规则
 ```
 

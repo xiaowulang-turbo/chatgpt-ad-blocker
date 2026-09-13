@@ -16,9 +16,13 @@ docs/assets/store/
 │   ├── feature-popup-en.png      # 功能总览场景·English（1280×800）
 │   ├── feature-chat-zh.png       # 对话流屏蔽效果·中文（1280×800）
 │   └── feature-chat-en.png       # 对话流屏蔽效果·English（1280×800）
-├── promo_small.png               # 小型宣传图（440×280）
-└── promo_marquee.png             # 大型宣传图（1400×560）
+├── promo_small.png               # 小型宣传图·中文（440×280）
+├── promo_small_en.png            # 小型宣传图·English（440×280）
+├── promo_marquee.png             # 大型宣传图·中文（1400×560）
+└── promo_marquee_en.png          # 大型宣传图·English（1400×560）
 ```
+
+> 宣传图模板位于仓库根目录 `tools/promo-templates/promo_{small,marquee}.html`，支持 `?lang=zh|en`（中英同一套模板、同一份内容，仅文案不同）。
 
 ## 重新生成方法
 
@@ -51,20 +55,35 @@ for p in popup-zh popup-en chat-zh chat-en; do
     "http://localhost:8766/.temp/store-mock/scene-$p.html"
 done
 
-# 宣传图 small（440×280）
-"$CHROME" --headless --disable-gpu --hide-scrollbars \
-  --window-size=440,280 \
-  --screenshot=docs/assets/store/promo_small.png \
-  http://localhost:8766/docs/_mock/promo_small.html
+# ── 宣传图（中英双语，440×280 / 1400×560）──────────────────────
+# 模板：tools/promo-templates/promo_{small,marquee}.html，支持 ?lang=zh|en
+#
+# ⚠️ 新版 Chrome headless 的 --window-size 是「窗口」尺寸：
+#    实际视口 = 窗口 − (16, 95)，而 --screenshot 截取整个窗口。
+#    因此要按「目标尺寸 + (16, 95)」渲染，再裁剪回目标尺寸：
+#      marquee 目标 1400×560 → 窗口 1416,655
+#      small   目标  440×280 → 窗口  456,375
+#    并加 --user-data-dir 避免复用已运行的 Chrome 会话导致参数失效。
 
-# 宣传图 marquee（1400×560）
-"$CHROME" --headless --disable-gpu --hide-scrollbars \
-  --window-size=1400,560 \
-  --screenshot=docs/assets/store/promo_marquee.png \
-  http://localhost:8766/docs/_mock/promo_marquee.html
+# 渲染（Windows / PowerShell，已验证）
+$chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+& $chrome --headless=new --disable-gpu --hide-scrollbars --user-data-dir="$env:TEMP\cbad-shot" `
+  --window-size=1416,655 --virtual-time-budget=2000 `
+  --screenshot="$env:TEMP\marquee_en.png" "file://$PWD/tools/promo-templates/promo_marquee.html?lang=en"
+
+# 裁剪回目标尺寸（System.Drawing）
+Add-Type -AssemblyName System.Drawing
+$i=[System.Drawing.Image]::FromFile("$env:TEMP\marquee_en.png")
+$b=New-Object System.Drawing.Bitmap 1400,560
+$g=[System.Drawing.Graphics]::FromImage($b)
+$g.DrawImage($i,(New-Object System.Drawing.Rectangle 0,0,1400,560),(New-Object System.Drawing.Rectangle 0,0,1400,560),[System.Drawing.GraphicsUnit]::Pixel)
+$b.Save("docs/assets/store/promo_marquee_en.png",[System.Drawing.Imaging.ImageFormat]::Png)
+
+# macOS：裁剪可直接用 sips
+#   sips -c 560 1400 "$TMPDIR/marquee_en.png" --out docs/assets/store/promo_marquee_en.png
 ```
 
-> HTML 模板的当前版本已与截图同步，**修改模板后需重新截图**才能在商店生效。模板可放 `docs/_mock/` 或 `tools/promo-templates/` 自行维护。
+> HTML 模板的当前版本已与截图同步，**修改模板后需重新截图**才能在商店生效。宣传图模板统一放在 `tools/promo-templates/`（中英共用一套）；`screenshots/` 里其余场景图的模板为一次性产物，未纳入仓库。
 
 ## Chrome Web Store 上架素材清单
 
@@ -72,6 +91,6 @@ done
 |---|---|---|---|
 | 商店主截图（中文区） | `feature-popup-zh.png`、`feature-chat-zh.png`（另有 `popup.png`、`screenshot-compare.png`） | 1280×800 / 640×400，1-5 张 | ✅ |
 | 商店主截图（English 区） | `feature-popup-en.png`、`feature-chat-en.png` | 1280×800 / 640×400，1-5 张 | ✅ |
-| Small promo tile | `promo_small.png` | 440×280 | 推荐 |
-| Marquee promo tile | `promo_marquee.png` | 1400×560 | 推荐 |
+| Small promo tile | `promo_small.png`（中）/ `promo_small_en.png`（英） | 440×280 | 推荐 |
+| Marquee promo tile | `promo_marquee.png`（中）/ `promo_marquee_en.png`（英） | 1400×560 | 推荐 |
 | 扩展图标 | `../icons/icon128.png` | 128×128 PNG | ✅ |

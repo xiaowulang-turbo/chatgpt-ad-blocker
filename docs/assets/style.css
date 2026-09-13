@@ -9,6 +9,7 @@
   --bg-soft: #f6f8fa;
   --bg-page: #ffffff;
   --radius: 12px;
+  --control-h: 27px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,18 +66,24 @@ a:hover { text-decoration: underline; }
 .nav a:hover { color: var(--primary); text-decoration: none; }
 .lang-switch {
   display: inline-flex;
+  height: var(--control-h);
   border: 1px solid var(--border);
   border-radius: 999px;
   overflow: hidden;
   font-size: 12px;
 }
 .lang-switch button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   border: none;
   background: transparent;
-  padding: 4px 12px;
+  padding: 0 12px;
   cursor: pointer;
   color: var(--text-soft);
   font-size: 12px;
+  line-height: 1;
 }
 .lang-switch button.active { background: var(--primary); color: #fff; }
 

@@ -38,9 +38,5 @@
   "statPage": {
     "message": "本页",
     "description": "统计：本页"
-  },
-  "restoreBtn": {
-    "message": "还原本页全部",
-    "description": "还原按钮"
   }
 }

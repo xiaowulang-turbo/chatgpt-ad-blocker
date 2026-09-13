@@ -3,17 +3,23 @@
 :root {
   --primary: #1a7f37;
   --primary-soft: #dafbe1;
+  --primary-soft-2: #f0fdf4;
+  --on-primary: #fff;
   --text: #1f2328;
   --text-soft: #6b7280;
   --border: #d0d7de;
+  --border-strong: #c1c5cb;
+  --bg-page: #fff;
   --bg-soft: #f6f8fa;
+  --switch-off: #d1d5db;
+  --shadow-knob: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 body {
   width: 280px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
-  background: #fff;
+  background: var(--bg-page);
   padding: 16px;
 }
 
@@ -44,12 +50,12 @@ body {
 .switch input { opacity: 0; width: 0; height: 0; }
 .slider {
   position: absolute; cursor: pointer; inset: 0;
-  background: #d1d5db; border-radius: 22px; transition: 0.2s;
+  background: var(--switch-off); border-radius: 22px; transition: 0.2s;
 }
 .slider::before {
   content: ""; position: absolute; height: 16px; width: 16px;
-  left: 3px; top: 3px; background: #fff; border-radius: 50%;
-  transition: 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  left: 3px; top: 3px; background: var(--on-primary); border-radius: 50%;
+  transition: 0.2s; box-shadow: var(--shadow-knob);
 }
 .switch input:checked + .slider { background: var(--primary); }
 .switch input:checked + .slider::before { transform: translateX(16px); }
@@ -84,7 +90,7 @@ body {
 
 .mode-dot {
   width: 14px; height: 14px;
-  border: 1.5px solid #c1c5cb;
+  border: 1.5px solid var(--border-strong);
   border-radius: 50%;
   flex-shrink: 0;
   position: relative;
@@ -104,7 +110,7 @@ body {
   display: flex;
   gap: 4px;
   padding: 14px 8px;
-  background: linear-gradient(180deg, var(--primary-soft) 0%, #f0fdf4 100%);
+  background: linear-gradient(180deg, var(--primary-soft) 0%, var(--primary-soft-2) 100%);
   border-radius: 10px;
 }
 .stat { flex: 1; text-align: center; }
@@ -121,33 +127,3 @@ body {
   margin-top: 4px;
   letter-spacing: 0.2px;
 }
-
-/* ---------- 按钮 ---------- */
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  width: 100%;
-  padding: 9px 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.15s;
-}
-.btn svg {
-  width: 14px;
-  height: 14px;
-  color: var(--text-soft);
-  transition: color 0.15s, transform 0.3s;
-}
-.btn:hover {
-  background: var(--bg-soft);
-  border-color: #bbc1c8;
-}
-.btn:hover svg { color: var(--primary); }
-.btn:active svg { transform: rotate(-180deg); }

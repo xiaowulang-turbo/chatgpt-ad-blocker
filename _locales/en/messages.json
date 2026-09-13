@@ -38,9 +38,5 @@
   "statPage": {
     "message": "This page",
     "description": "Stat: this page"
-  },
-  "restoreBtn": {
-    "message": "Restore all on page",
-    "description": "Restore button"
   }
 }

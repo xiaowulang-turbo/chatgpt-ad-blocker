@@ -126,15 +126,40 @@
 
   <script>
     (function () {
+      'use strict';
+      // 与首页 assets/i18n.js 共用同一 localStorage key，保证两页语言选择一致
+      var STORE_KEY = 'cbad-site-lang';
       var buttons = document.querySelectorAll('[data-set-lang]');
       var blocks = document.querySelectorAll('.lang-block');
+
+      function detectLang() {
+        try {
+          var q = new URLSearchParams(location.search).get('lang');
+          if (q === 'zh' || q === 'en') return q;
+        } catch (e) { /* ignore */ }
+        try {
+          var saved = localStorage.getItem(STORE_KEY);
+          if (saved === 'zh' || saved === 'en') return saved;
+        } catch (e) { /* ignore */ }
+        return (navigator.language || '').toLowerCase().indexOf('en') === 0 ? 'en' : 'zh';
+      }
+
       function setLang(lang) {
         blocks.forEach(function (b) { b.hidden = b.getAttribute('data-lang') !== lang; });
         buttons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-set-lang') === lang); });
+        document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        document.title = lang === 'en' ? 'Privacy Policy · ChatGPT Ad Blocker' : '隐私政策 · ChatGPT 广告屏蔽';
       }
+
       buttons.forEach(function (b) {
-        b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
+        b.addEventListener('click', function () {
+          var lang = b.getAttribute('data-set-lang');
+          try { localStorage.setItem(STORE_KEY, lang); } catch (e) { /* ignore */ }
+          setLang(lang);
+        });
       });
+
+      setLang(detectLang());
     })();
   </script>
 </body>

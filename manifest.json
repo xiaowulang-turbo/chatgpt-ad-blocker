@@ -30,6 +30,7 @@
       "run_at": "document_start"
     }
   ],
-  "permissions": ["storage"],
+  "minimum_chrome_version": "102",
+  "permissions": ["storage", "alarms"],
   "host_permissions": ["https://raw.githubusercontent.com/*"]
 }
